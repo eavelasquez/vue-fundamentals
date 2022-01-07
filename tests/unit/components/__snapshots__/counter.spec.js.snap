@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter.vue should match snapshot 1`] = `
+<h2>Current Counter</h2>
+<p data-testid="counter">0</p>
+<p>0 <sup>2</sup> = 0</p>
+<!-- <p>{{ counter }} <sup>2</sup> = {{ calculateSquaredCounter() }}</p> -->
+<div class="buttons-container"><button>-</button><button>+</button><button>↺</button></div>
+`;

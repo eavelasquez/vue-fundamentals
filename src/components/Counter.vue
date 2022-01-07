@@ -1,5 +1,6 @@
 <template>
   <h2>{{ customTitle }}</h2>
+  <p data-testid="counter">{{ counter }}</p>
   <p>{{ counter }} <sup>2</sup> = {{ squaredCounter }}</p>
   <!-- <p>{{ counter }} <sup>2</sup> = {{ calculateSquaredCounter() }}</p> -->
 
@@ -18,7 +19,7 @@ export default {
     initialCounter: {
       type: Number,
       default: 0,
-      required: true,
+      // required: true,
       // Custom validator function
       validator(value) {
         return value >= 0
@@ -60,19 +61,14 @@ export default {
 </script>
 
 <style scoped>
-button {
-  background-color: #64bb87;
-  border-radius: 5px;
-  border: 1px solid white;
+p {
   color: white;
-  cursor: pointer;
-  margin: 0 5px;
-  padding: 5px 15px;
-  transition: 0.3s ease-in-out;
+  font-size: 20px;
+  margin-top: 0px;
 }
 
-button:hover {
-  background-color: #5aa67b;
-  transition: 0.3s ease-in-out;
+h1,
+h2 {
+  color: white;
 }
 </style>

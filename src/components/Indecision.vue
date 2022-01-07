@@ -1,6 +1,6 @@
 <template>
   <img v-if="image" :src="image" alt="bg" />
-  <div class="bg-dark"></div>
+  <div :class="{ 'bg-dark': image }"></div>
 
   <div class="indecision-container">
     <input type="text" v-model="question" placeholder="Ask me a question" />
@@ -37,14 +37,19 @@ export default {
       } catch (error) {
         console.error('IndecisionComponent: getAnswer()', error)
         this.image = ''
-        this.answer = 'Error: ' + error.message
+        this.answer = 'Error: API request failed'
       }
     },
   },
   watch: {
     question(newQuestion, _oldQuestion) {
       this.isValidQuestion = newQuestion.endsWith('?')
+      console.log({ newQuestion })
       if (this.isValidQuestion) this.getAnswer()
+      if (!newQuestion) {
+        this.image = ''
+        this.answer = ''
+      }
     },
   },
 }
@@ -77,6 +82,7 @@ input {
   border-radius: 5px;
   border: none;
 }
+
 input:focus {
   outline: none;
 }
