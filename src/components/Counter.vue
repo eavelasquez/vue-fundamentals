@@ -3,7 +3,7 @@
   <p>{{ counter }} <sup>2</sup> = {{ squaredCounter }}</p>
   <!-- <p>{{ counter }} <sup>2</sup> = {{ calculateSquaredCounter() }}</p> -->
 
-  <div>
+  <div class="buttons-container">
     <button @click="decrement">-</button>
     <button @click="increment">+</button>
     <button @click="reset">&#8634;</button>
@@ -59,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
   background-color: #64bb87;
   border-radius: 5px;
